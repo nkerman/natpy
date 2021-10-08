@@ -1,0 +1,26 @@
+## Requirements
+python3.6
+numpy 
+matplotlib
+astropy
+pandas
+astroquery
+glob
+sys
+os
+ipykernel
+jupyterlab
+nbdime
+ipdb
+shutil
+crds
+datetime
+csv
+calcos
+costools
+scipy
+tqdm
+plotly
+urllib
+tarfile
+specutils

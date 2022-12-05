@@ -17,7 +17,7 @@ def gif_from_netcdf(netcdf, gif_name="netcdf_movie.gif", ext=0, vmin=0, vmax=1, 
     try:
         ds = xr.open_dataset(netcdf)
         print(sorted(list(ds.dims.keys())))
-        if sorted(list(ds.dims.keys())) == ['frame', 'pixel', 'wavelength']:
+                if sorted(list(ds.dims.keys())) == ['frame_dark','frame_sci', 'pixel', 'wavelength']:
             # Works if new format. In this case there may be 2 DataArrays ('dark', and 'science').
             ext_key = ['science','dark'][ext]
             if verbose:
@@ -53,7 +53,8 @@ def gif_from_netcdf(netcdf, gif_name="netcdf_movie.gif", ext=0, vmin=0, vmax=1, 
 """Examples given:
 """
 # from pathlib import Path
-# outfilepath = Path('data/synthetic_flatfield_data.nc')
+# outfilepath = Path('data/synthetic_flatfield_plus_dark_data.nc')
+# gif_from_netcdf(outfilepath, gif_name=(outfilepath.name)[:-3]+'.gif', vmax=1.2E4, verbose=True)
 # gif_from_netcdf(outfilepath, gif_name=(outfilepath.name)[:-3]+'.gif', vmax=1.2E4)
 
 # gif_from_netcdf("/Users/nake7532/Projects/CLARREO/csds/src/processing/l1a/lambdas/flatfield/flatfield_p5mm/data/synthetic_flatfield_data.nc")

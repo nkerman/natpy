@@ -19,10 +19,14 @@ def create_animation(data: np.array,
                      display: bool = True,
                      save: bool = True,
                      fps=30,
+                     zscale: tuple=None,
                      frame_labels=None,
                      content_description: str = "Animation of numpy array"):
     fig, ax = plt.subplots(figsize=(5, 5), dpi=dpi)
-    minz, maxz = data.min(), data.max()
+    if zscale:
+        minz, maxz = zscale
+    else:
+        minz, maxz = data.min(), data.max()
 
     if frame_labels == 'auto':
         frame_labels = [f"Frame {num}" for num in range(data.shape[0])]

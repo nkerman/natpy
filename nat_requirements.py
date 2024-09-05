@@ -1,5 +1,7 @@
 # nat_requirements.txt
 # Last updated: 2024-09-04
+# To create a new environment with the required packages, run the following command:
+# `conda create --name py312b python=3.12;conda activate py312b; pip install -r nat_requirements.py`
 
 antigravity
 astropy
